@@ -19,7 +19,26 @@ public class CateringSystemCLI {
 	
 	
 	public void run() {
-		//probably should do stuff here... ;-)
+		
+		//choice
+			//variable
+			//If else statement
+		
+		//new inventory
+		
+		// print main menu
+		
+		//print sub menu
+		
+		// Get cart items
+		
+		// Check Item Availability
+		
+		// update purchase log
+		
+		
+		
+		
 
 	}
 	
