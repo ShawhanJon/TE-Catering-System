@@ -34,7 +34,7 @@ public class Inventory {
 						cateringItemList.add(cateringInventory.get(key));
 						
 					}
-					System.out.println(cateringItemList.size());
+					
 					
 					return cateringItemList;
 				
