@@ -2,8 +2,9 @@ package com.techelevator;
 
 public class Appetizer extends CateringItem {
 
-	public Appetizer() {
-		// TODO Auto-generated constructor stub
+	public Appetizer(String name, Double price) {
+		super(name, price);
+		
 	}
 
 }
