@@ -43,11 +43,9 @@ public class InventoryLoader {
 	 	}
 	 	
 	 
-	 	//Create the Map to returned.
-	 	//Create scanner and file object.
-	 	//Create array to store splitted values.
-	 	//Check Splitted values via index to compare Catering items types. 
+	 	
 	} 
+	
 	 
 	
 	

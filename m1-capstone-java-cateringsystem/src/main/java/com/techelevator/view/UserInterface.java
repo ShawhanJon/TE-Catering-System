@@ -1,9 +1,12 @@
 package com.techelevator.view;
 
+import java.text.DecimalFormat;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import com.techelevator.CateringItem;
+
 
 public class UserInterface{
 	
@@ -22,10 +25,10 @@ private Scanner scanner;
 	 */
 	
 	public String printMainMenu() {
+		System.out.println("***************************************************************");
+		System.out.println(" JJ's Catering App ");
 
-		System.out.println("***************************");
-		System.out.println("JJ's Catering App");
-		System.out.println("***************************\n");
+		System.out.println("**************************************************************\n");
 
 		System.out.println("1. Display Catering Items");
 		System.out.println("2. Order");
@@ -46,7 +49,9 @@ private Scanner scanner;
 		//TODO: Group items based on Product codes.
 
 		
-		System.out.println("\n*********** List of Items Avaliable ************\n");
+		System.out.println("\n*********** List of Items Avaliable ******************************\n");
+		System.out.println("Item ID	 " + "Item Name	 " + "Category  "  + " Quantity " + "Price $ ");
+		System.out.println("--------------------------------------------------------------------");
 		
 		
 		if (cateringItems.isEmpty()) {
@@ -68,28 +73,33 @@ private Scanner scanner;
 	 * @param home
 	 */
 	public void printCateringItem(CateringItem cateringitem) {
+		System.out.println(cateringitem.getItemId() + "	" + cateringitem.getName()  + "	 "  + cateringitem.getFoodType() + "  " + cateringitem.getNumOfCateringItems() +  "  "  + cateringitem.getPrice());
 		
-<<<<<<< HEAD
-		System.out.println("Catering Item Name: " + cateringitem.getClass().getSimpleName() + " | " + cateringitem.getName());
-		System.out.println(String.format("%-25s %s", "Quantity: ", cateringitem.getNumOfCateringItems()));
-		System.out.println(String.format("%-25s $%s", "Price: ", String.format("%.2f", cateringitem.getPrice())));
-=======
-		System.out.println(String.format("%-3s","Item ID: " + cateringitem.getItemId()));
-		System.out.println(String.format("%-20s","Item Name: " + cateringitem.getName()));
-		System.out.println(String.format("%-5s %s", "Quantity: ", cateringitem.getNumOfCateringItems()));
-		System.out.println(String.format("%-8s $%s", "Price: ", String.format("%.2f", cateringitem.getPrice())));
-		System.out.println(String.format("%-10s","Category: " + cateringitem.getFoodType()));
->>>>>>> d52ccfcc465b2919ff99a00b56f416712e1dbdf2
-
-		
-		System.out.println("\n*********** *** *** ***************\n");		
+		System.out.println("\n**********************************************************************\n");		
 		
 	}
 	
-	public void makeOrder() {
+	public String printPurchasingsubMenu() {
+
+		System.out.println("****************************************************************************");
+		System.out.println(" JJ's Catering App Ordering Process ");
+		System.out.println("****************************************************************************\n");
+
+		System.out.println("1. Add Money");
+		System.out.println("2. Select product");
+		System.out.println("3. Complete transaction");
+		System.out.println("4. Return to previous menu\n");
+
+		System.out.println("Please select your choice (number only)");
+
+		return scanner.nextLine();
+
+	}	
+	public String makeOrder() {
+		
+		return " ";
 		
 	}
-	
 
 
 	
@@ -99,15 +109,7 @@ private Scanner scanner;
 	
 
 	
-	
-    //Main Menu
-		//1. Display Catering Items
-			//load inventory items
-				
-		//2. Order
-			//display SubMenu
-	
-		//3. Quit
+
 				
 	
 	
@@ -117,22 +119,5 @@ private Scanner scanner;
 	
 	
 	
-			//**SubMenu**
-				//1. Add Money
-					//add up to $5000
-					//Current Account Balance
-	
-				//2. Select Products
-					//(1. Display Catering Items)
-					//Select Product via Product ID & Quantity
-					//Update Account Balance and Stock
-					//Return to Order Menu
-	
-				//3. Complete Transaction
-					//Receive Report Of Products Ordered
-					//Return Customer Money
-					//Account Balance equals 0
-	
-				//Current Account Balance
 	
 }
