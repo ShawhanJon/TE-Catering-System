@@ -19,19 +19,19 @@ public class InventoryLoader {
 	 			String line = scanner.nextLine();
 	 			String[] splitedValues = line.split(Pattern.quote("|"));
 	 			if(splitedValues [3].equalsIgnoreCase("B")){
-	 				CateringItem cateringItem = new Beverage(splitedValues[1], Double.parseDouble(splitedValues[2]));
+	 				CateringItem cateringItem = new Beverage(splitedValues[0], splitedValues[1],Double.valueOf(splitedValues[2]), splitedValues[3]);
 					cateringItemMap.put(splitedValues[0], cateringItem);	
 				}
 	 			else if(splitedValues [3].equalsIgnoreCase("A")){
-	 				CateringItem cateringItem = new Appetizer(splitedValues[1], Double.parseDouble(splitedValues[2]));
+	 				CateringItem cateringItem = new Appetizer(splitedValues[0], splitedValues[1],Double.valueOf(splitedValues[2]), splitedValues[3]);
 					cateringItemMap.put(splitedValues[0], cateringItem);	
 				}
 	 			else if(splitedValues [3].equalsIgnoreCase("D")){
-	 				CateringItem cateringItem = new Dessert(splitedValues[1], Double.parseDouble(splitedValues[2]));
+	 				CateringItem cateringItem = new Dessert(splitedValues[0], splitedValues[1],Double.valueOf(splitedValues[2]), splitedValues[3]);
 					cateringItemMap.put(splitedValues[0], cateringItem);	
 				}
 	 			else if(splitedValues [3].equalsIgnoreCase("E")){
-	 				CateringItem cateringItem = new Entree(splitedValues[1], Double.parseDouble(splitedValues[2]));
+	 				CateringItem cateringItem = new Entree(splitedValues[0], splitedValues[1],Double.valueOf(splitedValues[2]), splitedValues[3]);
 					cateringItemMap.put(splitedValues[0], cateringItem);	
 				}
 	 					

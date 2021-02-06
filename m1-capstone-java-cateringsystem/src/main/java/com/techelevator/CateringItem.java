@@ -1,20 +1,24 @@
 package com.techelevator;
 
 public abstract class CateringItem {
-	private Double price;
+	private double price;
 	private String name;
 	private int numOfCateringItems = 50;
+	private String itemId;
+	private String foodType;
 
 	
 	/**This is the constructor.*/
-	public CateringItem(String name, Double price) {
+	public CateringItem(String itemId, String name, double price, String foodType) {
 		this.name = name;
 		this.price = price;
+		this.itemId = itemId;
+		this.foodType = foodType;
 		
 	}
 
 
-	public Double getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
@@ -27,7 +31,7 @@ public abstract class CateringItem {
 		return numOfCateringItems;
 	}
 	
-	public boolean isAvailableToPurchase() {
+	public boolean itemAvailable() {
 		if(this.numOfCateringItems >= 1) {
 			return true;
 		}
@@ -37,6 +41,42 @@ public abstract class CateringItem {
 	public void purchaseItem() {
 		numOfCateringItems -= 1;
 		
+	}
+	
+	public String getQuantityString() {
+		if(this.getNumOfCateringItems() == 0) {
+			return "SOLD OUT";
+		} else {
+			return String.valueOf(this.getNumOfCateringItems());
+		}
+	}
+
+
+	public String getItemId() {
+		return itemId;
+	}
+
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
+
+
+	public String getFoodType() {
+		if (foodType.equals("B")) {
+			return "Beverage";
+		}else if (foodType.equals("E")) {
+			return "Entree";
+		}else if(foodType.equals("D")) {
+			return "Dessert";
+		} else {
+			return "Appetizer";
+		}
+	}
+
+
+	public void setFoodType(String foodType) {
+		this.foodType = foodType;
 	}
 
 	
