@@ -69,12 +69,16 @@ private Scanner scanner;
 	 */
 	public void printCateringItem(CateringItem cateringitem) {
 		
-		System.out.println("Catering Item Name: " + cateringitem.getName());
+		System.out.println("Catering Item Name: " + cateringitem.getClass().getSimpleName() + " | " + cateringitem.getName());
 		System.out.println(String.format("%-25s %s", "Quantity: ", cateringitem.getNumOfCateringItems()));
 		System.out.println(String.format("%-25s $%s", "Price: ", String.format("%.2f", cateringitem.getPrice())));
 
 		
 		System.out.println("\n*********** *** *** ***************\n");		
+		
+	}
+	
+	public void makeOrder() {
 		
 	}
 	
