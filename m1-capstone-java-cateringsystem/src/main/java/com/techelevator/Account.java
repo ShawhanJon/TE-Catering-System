@@ -8,14 +8,7 @@ import java.util.Arrays;
 public class Account {
 	public double balance;
 
-	public Account() {
-		
-		// addMoney()      calculate balance
-		
-		// getChange()     calculate change
-		
-		// calculateBalance() starting balance minus item price	
-	}
+
 
 	public double getBalance() {
 		return balance;
@@ -33,14 +26,14 @@ public class Account {
 			} 
 	}
 		
-		public void getChange() {
+		public void getChange(double balanceAfterPurchase) {
 			Double[] change = new Double[] {0.25, 0.10, 0.05};
 			  String[] typeOfCoin = new String[] {"Quarter(s)", "Dime(s)", "Nickle(s)"};
 			  for(int i = 0; i < change.length; i++) {
 			    	  int count;
-			    	  count = (int) (balance / change[i]);
+			    	  count = (int) (balanceAfterPurchase / change[i]);
 
-			      balance -= (change[i] * count);
+			      balanceAfterPurchase -= (change[i] * count);
 			      System.out.println(count + " " + typeOfCoin[i]);
 			  }
 		}

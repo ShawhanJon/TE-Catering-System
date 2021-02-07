@@ -102,12 +102,7 @@ private Scanner scanner;
 		return scanner.nextLine();
 
 	}	
-	public String makeOrder() {
-		
-		return " ";
-		
-	}
-
+	
 
 	
 	

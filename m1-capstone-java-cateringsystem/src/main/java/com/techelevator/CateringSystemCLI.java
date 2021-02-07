@@ -1,6 +1,8 @@
 package com.techelevator;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -35,6 +37,7 @@ public class CateringSystemCLI {
 	 Map<String, CateringItem> cateringInventory;
 	
 	 Scanner scanner = new Scanner(System.in);
+	 NewPurchaseLog newPurchaseLog = new NewPurchaseLog();
 	 
 	 
 	 
@@ -46,17 +49,19 @@ public class CateringSystemCLI {
 	
 	
 	/**The main() should just create an instance of the class, and delegate to the run method
-	 * @throws FileNotFoundException */
-	public static void main(String[] args) throws FileNotFoundException {
+	 * @throws IOException */
+	public static void main(String[] args) throws IOException {
 		UserInterface menu = new UserInterface();
 		CateringSystemCLI cli = new CateringSystemCLI(menu);
 		cli.run();
+		
+		
 	
 	}	
 
 	
 	
-	public void run() throws FileNotFoundException {
+	public void run() throws IOException {
 		Inventory inventory = new Inventory();
 		
 	
@@ -74,7 +79,7 @@ public class CateringSystemCLI {
         		
         		//Send list to catering items to print.
     			UI.printListOfCateringItems(cateringItems);
-    			
+    			    			
         		
         	}
         	else if(userChoice.equals(Order )) {
@@ -101,7 +106,8 @@ public class CateringSystemCLI {
         
 	} 
 	
-	 private void subMenu() throws FileNotFoundException {
+	 private void subMenu() throws IOException {
+			Inventory inventory = new Inventory();
 		
 			boolean Looping = true;
 			
@@ -113,12 +119,15 @@ public class CateringSystemCLI {
 	    				System.out.println("You chose add money, please enter the amount you will like to add.");	
 	    				double credit = Double.parseDouble(scanner.nextLine());
 	    				account.addMoney(credit);
+	    				newPurchaseLog.logUser("Add Money", account.getBalance());
+	    				
 	    				
 	    		}
 	    		else if (subMenuOption.equalsIgnoreCase("2")) {
-		    		Inventory inventory = new Inventory();
+	    			List<CateringItem>cateringItems = inventory.retrieveListOfCateringItems();
+	    			UI.printListOfCateringItems(cateringItems);
 		   			cateringInventory = inventory.getInventoryMap();
-		   			System.out.println("Enter the item's product code(ex: A1) you want to purchase.");
+		   			System.out.println("Enter the item's product code(e.g: A1) you want to purchase.");
 		   			String userInput = scanner.nextLine();
 		   			
 		   			//System.out.println("Hey there! " + cateringInventory);
@@ -126,12 +135,15 @@ public class CateringSystemCLI {
 						//System.out.println("cateringInventory contains the Product code.");
 			
 							if(cateringInventory.get(userInput).itemAvailable() && (account.getBalance() >= cateringInventory.get(userInput).getPrice())) {
-								cateringInventory.get(userInput).purchaseItem(0);
+								cateringInventory.get(userInput).purchaseItem(1);
 								cart.addToCart(cateringInventory.get(userInput));
 								double userBalance = account.getBalance() - cateringInventory.get(userInput).getPrice(); 
-								System.out.print("Here is your Balance: $");
-								System.out.printf("%.2f", userBalance);
-								System.out.println();
+								newPurchaseLog.logUser(cateringInventory.get(userInput).getName(), userBalance);
+								System.out.println("Here is your change: $");
+								account.getChange(userBalance);
+								System.out.println( "Here is your balance: $" + (String.format("%.2f", userBalance)));
+								
+								
 							}	
 					}
 		   			 else {	
