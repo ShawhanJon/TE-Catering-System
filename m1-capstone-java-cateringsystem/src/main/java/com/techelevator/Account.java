@@ -3,12 +3,10 @@ package com.techelevator;
 
 import java.util.Set;
 import java.util.HashSet;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
 
 public class Account {
-	private double balance;
+	public double balance;
 
 	public Account() {
 		
@@ -24,12 +22,14 @@ public class Account {
 	}
 
 	public void addMoney(double moneyToAdd) {
-		Set<Double> values = new HashSet<Double>(Arrays.asList(new Double[] {1.00, 5.00, 10.00, 20.00}));
+		Set<Double> values = new HashSet<Double>(Arrays.asList(new Double[] {1.00, 5.00, 10.00, 20.00, 50.00, 100.00}));
 			if(values.contains(moneyToAdd)) {
 				balance += moneyToAdd;
-				System.out.println("Your current balance is $" + balance + " .");
+				System.out.print("Your current balance is: $");
+				System.out.printf("%.2f", balance);
+				System.out.println(".");
 			} else {
-				System.out.println("Invalid Currency Amount, Only $1s, $2s, $5s, and $10s\n ");
+				System.out.println("Invalid Currency Amount, Only $1s, $5s, $10s, $20s, $50s, and $100s\n ");
 			} 
 	}
 		

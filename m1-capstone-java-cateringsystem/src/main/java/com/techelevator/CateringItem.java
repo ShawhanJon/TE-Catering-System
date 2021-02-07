@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public abstract class CateringItem {
+public class CateringItem {
 	private double price;
 	private String name;
 	private int numOfCateringItems = 50;
@@ -38,8 +38,8 @@ public abstract class CateringItem {
 		return false;
 	}
 	
-	public void purchaseItem() {
-		numOfCateringItems -= 1;
+	public int purchaseItem(int i) {
+		return numOfCateringItems -= i;
 		
 	}
 	

@@ -87,7 +87,7 @@ public class CateringSystemCLI {
         	else if(userChoice.equals(Quit )) {
         		/**Close the program.*/
         		isRunning = false;
-        		System.out.println("Exiting program....");	
+        		System.out.println("Have A Great Day!");	
         		System.exit(0);	
         		
         	}
@@ -111,14 +111,14 @@ public class CateringSystemCLI {
 	    				
 	    		if (subMenuOption.equalsIgnoreCase("1")) {
 	    				System.out.println("You chose add money, please enter the amount you will like to add.");	
-	    				Double credit = Double.parseDouble(scanner.nextLine());
+	    				double credit = Double.parseDouble(scanner.nextLine());
 	    				account.addMoney(credit);
 	    				
 	    		}
 	    		else if (subMenuOption.equalsIgnoreCase("2")) {
 		    		Inventory inventory = new Inventory();
 		   			cateringInventory = inventory.getInventoryMap();
-		   			System.out.println("please enter the item's product code you will like to purchase.");
+		   			System.out.println("Enter the item's product code(ex: A1) you want to purchase.");
 		   			String userInput = scanner.nextLine();
 		   			
 		   			//System.out.println("Hey there! " + cateringInventory);
@@ -126,11 +126,12 @@ public class CateringSystemCLI {
 						//System.out.println("cateringInventory contains the Product code.");
 			
 							if(cateringInventory.get(userInput).itemAvailable() && (account.getBalance() >= cateringInventory.get(userInput).getPrice())) {
-								cateringInventory.get(userInput).purchaseItem();
+								cateringInventory.get(userInput).purchaseItem(0);
 								cart.addToCart(cateringInventory.get(userInput));
-								Double userBalance = account.getBalance() - cateringInventory.get(userInput).getPrice(); 
-								System.out.println("Here is your Balance $" + userBalance);
-								
+								double userBalance = account.getBalance() - cateringInventory.get(userInput).getPrice(); 
+								System.out.print("Here is your Balance: $");
+								System.out.printf("%.2f", userBalance);
+								System.out.println();
 							}	
 					}
 		   			 else {	

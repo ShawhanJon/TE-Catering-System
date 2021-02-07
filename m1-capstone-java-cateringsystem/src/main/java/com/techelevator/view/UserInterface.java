@@ -5,10 +5,15 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import com.techelevator.Account;
 import com.techelevator.CateringItem;
+import com.techelevator.CateringSystemCLI;
+import com.techelevator.Inventory;
+import com.techelevator.view.UserInterface;
 
 
 public class UserInterface{
+	
 	
 	
 	
@@ -50,8 +55,8 @@ private Scanner scanner;
 
 		
 		System.out.println("\n*********** List of Items Avaliable ******************************\n");
-		System.out.println("Item ID	 " + "Item Name	 " + "Category  "  + " Quantity " + "Price $ ");
-		System.out.println("--------------------------------------------------------------------");
+		System.out.printf("%-5s | %-20s | %15s | %-5s | %-5s", "Item ID", "Item Name", "Category", "Quantity", "Price $");
+		System.out.println("\n--------------------------------------------------------------------\n");
 		
 		
 		if (cateringItems.isEmpty()) {
@@ -73,8 +78,8 @@ private Scanner scanner;
 	 * @param home
 	 */
 	public void printCateringItem(CateringItem cateringitem) {
-		System.out.println(cateringitem.getItemId() + "	" + cateringitem.getName()  + "	 "  + cateringitem.getFoodType() + "  " + cateringitem.getNumOfCateringItems() +  "  "  + cateringitem.getPrice());
-		
+		System.out.printf("%-6s | %-20s | %15s | %-5s | %-5s",cateringitem.getItemId(), cateringitem.getName(), cateringitem.getFoodType(), cateringitem.getNumOfCateringItems(), "$" + cateringitem.getPrice());
+
 		System.out.println("\n**********************************************************************\n");		
 		
 	}
@@ -89,6 +94,8 @@ private Scanner scanner;
 		System.out.println("2. Select product");
 		System.out.println("3. Complete transaction");
 		System.out.println("4. Return to previous menu\n");
+		
+
 
 		System.out.println("Please select your choice (number only)");
 
