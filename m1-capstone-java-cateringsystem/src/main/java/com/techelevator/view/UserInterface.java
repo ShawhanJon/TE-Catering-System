@@ -1,14 +1,11 @@
 package com.techelevator.view;
 
-import java.text.DecimalFormat;
+
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
-import com.techelevator.Account;
+
 import com.techelevator.CateringItem;
-import com.techelevator.CateringSystemCLI;
-import com.techelevator.Inventory;
 import com.techelevator.view.UserInterface;
 
 
@@ -78,9 +75,9 @@ private Scanner scanner;
 	 * @param home
 	 */
 	public void printCateringItem(CateringItem cateringitem) {
-		System.out.printf("%-6s | %-20s | %15s | %-5s | %-5s",cateringitem.getItemId(), cateringitem.getName(), cateringitem.getFoodType(), cateringitem.getNumOfCateringItems(), "$" + cateringitem.getPrice());
+		System.out.printf("%-7s | %-20s | %15s | %-8s | %-5s\n",cateringitem.getItemId(), cateringitem.getName(), cateringitem.getFoodType(), cateringitem.getNumOfCateringItems(), "$" + cateringitem.getPrice());
 
-		System.out.println("\n**********************************************************************\n");		
+//		System.out.println("\n**********************************************************************\n");		
 		
 	}
 	

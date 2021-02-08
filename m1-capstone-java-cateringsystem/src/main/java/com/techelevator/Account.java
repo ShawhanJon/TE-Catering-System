@@ -27,8 +27,8 @@ public class Account {
 	}
 		
 		public void getChange(double balanceAfterPurchase) {
-			Double[] change = new Double[] {0.25, 0.10, 0.05};
-			  String[] typeOfCoin = new String[] {"Quarter(s)", "Dime(s)", "Nickle(s)"};
+			Double[] change = new Double[] {100.00, 50.00, 20.00, 10.00, 5.00, 1.00, 0.25, 0.10, 0.05};
+			  String[] typeOfCoin = new String[] {"-100(s)", "-50(s)", "-20(s)", "-10(s)", "-5(s)", "-1(s)", "-Quarter(s)", "-Dime(s)", "-Nickle(s)"};
 			  for(int i = 0; i < change.length; i++) {
 			    	  int count;
 			    	  count = (int) (balanceAfterPurchase / change[i]);

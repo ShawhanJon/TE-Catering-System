@@ -1,12 +1,10 @@
 package com.techelevator;
 
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 import com.techelevator.CateringItem;
 import com.techelevator.CateringSystemCLI;
