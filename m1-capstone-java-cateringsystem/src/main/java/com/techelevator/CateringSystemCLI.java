@@ -127,16 +127,17 @@ public class CateringSystemCLI {
 		   			cateringInventory = inventory.getInventoryMap();
 		   			System.out.println("Enter the item's product code(e.g: A1) you want to purchase.");
 		   			String userInput = scanner.nextLine();
+		   			String finaluserInput = userInput.toUpperCase();
 		   			
 		   			//System.out.println("Hey there! " + cateringInventory);
-		   			if(cateringInventory.containsKey(userInput.toUpperCase())) {
+		   			if(cateringInventory.containsKey(finaluserInput)) {
 						//System.out.println("cateringInventory contains the Product code.");
 			
-							if(cateringInventory.get(userInput).itemAvailable() && (account.getBalance() >= cateringInventory.get(userInput).getPrice())) {
-								cateringInventory.get(userInput).purchaseItem(1);
-								cart.addToCart(cateringInventory.get(userInput));
-								double userBalance = account.getBalance() - cateringInventory.get(userInput).getPrice(); 
-								newPurchaseLog.logUser(cateringInventory.get(userInput).getName(), userBalance);
+							if(cateringInventory.get(finaluserInput).itemAvailable() && (account.getBalance() >= cateringInventory.get(finaluserInput).getPrice())) {
+								cateringInventory.get(finaluserInput).purchaseItem(1);
+								cart.addToCart(cateringInventory.get(finaluserInput));
+								double userBalance = account.getBalance() - cateringInventory.get(finaluserInput).getPrice(); 
+								newPurchaseLog.logUser(cateringInventory.get(finaluserInput).getName(), userBalance);
 								System.out.println("Here is your change: $");
 								account.getChange(userBalance);
 								System.out.println( "Here is your balance: $" + (String.format("%.2f", userBalance)));

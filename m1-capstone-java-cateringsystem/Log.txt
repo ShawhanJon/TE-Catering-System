@@ -27,3 +27,7 @@ Mon Feb 08 08:32:02 EST 2021 Beer                97.45
 Mon Feb 08 08:32:28 EST 2021 Add Money           10.0                
 Mon Feb 08 08:32:39 EST 2021 Add Money           60.0                
 Mon Feb 08 08:32:48 EST 2021 Bacon Wrapped Shrimp55.85               
+Thu Feb 11 15:30:51 EST 2021 Add Money           10.0                
+Thu Feb 11 15:31:07 EST 2021 Add Money           30.0                
+Thu Feb 11 15:38:46 EST 2021 Add Money           100.0               
+Thu Feb 11 15:38:56 EST 2021 Tropical Fruit Bowl 96.5                
