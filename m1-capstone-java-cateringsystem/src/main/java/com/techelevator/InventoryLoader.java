@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 import java.util.regex.Pattern;
 
 
@@ -12,7 +13,7 @@ public class InventoryLoader {
 	
 	 /**This method returns a Map after loading inventory from catering system.csv file.*/
 	public Map <String, CateringItem>loadInventoryFromFile() throws FileNotFoundException{
-	 	Map<String, CateringItem>cateringItemMap = new HashMap<String, CateringItem>();
+	 	Map<String, CateringItem>cateringItemMap = new TreeMap<String, CateringItem>();
 	 
 	 	try(Scanner scanner = new Scanner(new File("cateringsystem.csv"))){
 	 		while(scanner.hasNextLine()) {

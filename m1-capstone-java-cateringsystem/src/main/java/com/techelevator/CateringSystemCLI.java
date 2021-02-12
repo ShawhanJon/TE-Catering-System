@@ -14,7 +14,7 @@ import com.techelevator.view.UserInterface;
 public class CateringSystemCLI {
 	
 	private UserInterface UI;
-	private static final String Display_Catering_Items = "1";
+	private static final String Display_Catering_Items = "1";   
 	private static final String Order = "2";
 	private static final String Quit = "3";
 
